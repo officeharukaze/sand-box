@@ -53,22 +53,21 @@ class App extends Component {
     ));
   }
   componentDidMount() {
-    // console.log('開始');
+    console.log('開始');
   }
   componentDidUpdate() {
-    // console.log('更新');
+    console.log('更新');
   }
   render() {
     return (
       <div className="container">
-        <header className="header">
-          <h1>簡単チャットシステム v1.0</h1>
-        </header>
-        <div className="wrapper">
-          <AccountsUIWrapper />
-        </div>
-        <div className="tasks">
-          <ul>{this.renderTasks()}</ul>
+        <div className="contentHeader">
+          <header className="header">
+            <h1>簡単チャットシステム v1.0</h1>
+          </header>
+          <div className="wrapper">
+            <AccountsUIWrapper />
+          </div>
         </div>
         <footer className="footer">
           { this.props.currentUser ?
@@ -81,6 +80,11 @@ class App extends Component {
             </form> : ''
           }
         </footer>
+        <div className="tasks">
+          <ul>
+            {this.renderTasks()}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactScroll from 'react-scroll';
 
 import { Tasks } from '../api/tasks.js';
 
@@ -9,9 +10,10 @@ export default class Task extends Component {
   }
   componentDidMount() {
     // console.log('開始');
+    ReactScroll.animateScroll.scrollToBottom('task', { duration: 1000 });
   }
   componentDidUpdate() {
-    // console.log('更新');
+    console.log('xxx:更新');
   }
   render() {
     const owner = (this.props.currentUser.username === this.props.task.username) ? 'owner' : 'other';
